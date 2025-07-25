@@ -1,61 +1,36 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoApi.Data;
-using TodoApi.Models;  //DbCoontext >> data klasörü içerisindeki !!s
+using TodoApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace TodoApi.Controllers
 {
-
-
-
-
-    [Route("api/[controller]")]
+    [Route("api/todoitems")]
     [ApiController]
-
-
-
     public class TodoItemsController : ControllerBase
     {
-
-        //Dependency injection dediğimiz şey burada yapıldı.
         private readonly TodoDbContext _context;
+
         public TodoItemsController(TodoDbContext context)
         {
             _context = context;
         }
 
-        // ↓↓ EndPointler buraya gelecek ↓↓
-
-        //get metodu
-
-        [HttpGet]
-
-        public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
+        // POST: api/todoitems/getall
+        // Tüm todo item'ların listesini döner
+        [HttpPost("getall")]
+        public async Task<ActionResult<IEnumerable<TodoItem>>> GetAll()
         {
             return await _context.TodoItems.ToListAsync();
         }
 
-
-        //HTTP POST isteği.
-
-        [HttpPost]
-        public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item)
+        // POST: api/todoitems/getbyid
+        // Belirli bir id'ye sahip todo item'ı döner
+        [HttpPost("getbyid")]
+        public async Task<ActionResult<TodoItem>> GetById([FromBody] IdRequest request)
         {
-            _context.TodoItems.Add(item);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetTodoItems), new { id = item.Id }, item);
-        }
-
-        //HTTP Get id
-
-        [HttpGet("{id}")]
-
-        public async Task<ActionResult<TodoItem>> GetToDoItem(int id)
-        {
-
-            var item = await _context.TodoItems.FindAsync(id);
+            var item = await _context.TodoItems.FindAsync(request.Id);
 
             if (item == null)
             {
@@ -63,51 +38,55 @@ namespace TodoApi.Controllers
             }
 
             return item;
-
         }
 
-        [HttpPut("{id}")]
-
-        public async Task <ActionResult<TodoItem>> PutTodoItem(int id ,TodoItem item)
+        // POST: api/todoitems/create
+        // Yeni bir todo item oluşturur
+        [HttpPost("create")]
+        public async Task<ActionResult<TodoItem>> Create([FromBody] TodoItem item)
         {
-            if ( id != item.Id)
-            {
-                return BadRequest();
+            _context.TodoItems.Add(item);
+            await _context.SaveChangesAsync();
 
+            return CreatedAtAction(nameof(GetById), new { id = item.Id }, item);
+        }
+
+        // POST: api/todoitems/update
+        // Mevcut bir todo item'ı günceller
+        [HttpPost("update")]
+        public async Task<IActionResult> Update([FromBody] TodoItem item)
+        {
+            if (!_context.TodoItems.Any(e => e.Id == item.Id))
+            {
+                return NotFound();
             }
 
             _context.Entry(item).State = EntityState.Modified;
 
-
             try
             {
                 await _context.SaveChangesAsync();
-
-
             }
             catch (DbUpdateConcurrencyException)
             {
-                if(!_context.TodoItems.Any(e => e.Id == id))
-                {
-                    return NotFound();
-                }else
-                {
-                    throw;
-                }
-
-                
+                return StatusCode(StatusCodes.Status500InternalServerError, "Concurrency error");
             }
 
-
             return NoContent();
-
         }
 
-        [HttpDelete("{id}")]
-
-        public async Task<IActionResult> DeleteTodoItem(int id)
+        // POST: api/todoitems/delete
+        // Belirli bir todo item'ı siler
+        [HttpPost("delete")]
+        public async Task<IActionResult> Delete([FromBody] IdRequest request)
         {
-            var item = await _context.TodoItems.FindAsync(id);
+//  var item = await _context.TodoItems.FindAsync(request.Id); buurada linq mantığı.
+//  kullandım ama daha katmanlı hale getirip dao ile daha farklı bir yaklaşımla yaptım.
+
+            var item = await _context.TodoItems.FindAsync(request.Id);
+
+            //burada dao ya gönderecektim o da doaımp'e gidecekti ara katman sql sorguları
+            //linq ile gitme , başka zaman farklı bir sorgu çıkarsa hazır fonksiyonu olmaz. buna da bak . 
 
             if (item == null)
             {
@@ -119,7 +98,11 @@ namespace TodoApi.Controllers
 
             return NoContent();
         }
+    }
 
-         
+    // Yardımcı Id göndermek için model
+    public class IdRequest
+    {
+        public int Id { get; set; }
     }
 }
