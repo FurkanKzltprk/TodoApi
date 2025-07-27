@@ -18,11 +18,13 @@ public interface TodoApiServiceDAO {
     @POST("api/todoitems/getall")
     Call<List<Todo>> getTodos();
 
+
+
     @POST("api/todoitems/create")
     Call<Todo> createTodo(@Body Todo todo);
 
     @POST("api/todoitems/update")
-    Call<Todo> updateTodo(@Body Todo todo); // ❗️Sadece body gönderiliyor
+    Call<Void> updateTodo(@Body Todo todo);
 
     @POST("api/todoitems/delete")
     Call<Void> deleteTodo(@Body Todo todo);

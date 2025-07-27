@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         loadTodos();
     }
 
-    private void loadTodos() {
+    public void loadTodos() {
         TodoApiServiceDAO apiService = ApiClient.getRetrofitInstance().create(TodoApiServiceDAO.class);
         Call<List<Todo>> call = apiService.getTodos();
 

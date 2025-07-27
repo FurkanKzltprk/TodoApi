@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeRefresh"
@@ -11,21 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Görev listesi -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="12dp"
             android:clipToPadding="false"
-            android:padding="16dp" />
+            android:scrollbars="vertical" />
 
+        <!-- Görev ekleme butonu -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:contentDescription="Görev Ekle"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            android:layout_margin="20dp"
+            android:contentDescription="Yeni görev ekle"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:backgroundTint="@color/purple_500"
+            app:tint="@android:color/white" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

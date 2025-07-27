@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static final String BASE_URL = "http://192.168.1.101:7272/";  // kendi IP adresin ve portun
+    private static final String BASE_URL = "http://192.168.1.104:7272/";  // kendi IP adresin ve portun
     //furkan: Soru ?? burada ip bilgisayar açılıp kapanınca değişti burada da sürekli değiştirmek zorunda mı kalıcam ? Cevap : EVET böylesi daha iyi .
     private static Retrofit retrofit;
 

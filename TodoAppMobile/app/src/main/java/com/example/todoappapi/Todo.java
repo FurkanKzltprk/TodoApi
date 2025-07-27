@@ -1,24 +1,16 @@
 package com.example.todoappapi;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Todo {
+
     private int id;
     private String title;
+
+    @SerializedName("isCompleted")  //furkan:bu satır çok önemli !! api ile uyumlu olmalı !!
     private boolean isCompleted;
 
     public Todo() {}
-
-    // boş constructor
-/* Neden 2 tane constructor var ???
-1- JSON parse işlemlerinde (Retrofit, Gson, Jackson gibi kütüphaneler), Java sınıfını
-oluşturabilmek için önce boş bir nesne yaratırlar, sonra setter metodlarıyla alanları doldururlar.
-
-2-Android sisteminin veya
- bazı framework’lerin reflection kullanarak nesne yaratabilmesi için parametresiz constructor gerekir.
-
-
-3-Ayrıca bazen elle manuel olarak boş nesne yaratmak isteyebilirsin:
-*/
-
 
     public Todo(int id, String title, boolean isCompleted) {
         this.id = id;
@@ -50,6 +42,4 @@ oluşturabilmek için önce boş bir nesne yaratırlar, sonra setter metodlarıy
     public void setCompleted(boolean completed) {
         isCompleted = completed;
     }
-
-
 }
