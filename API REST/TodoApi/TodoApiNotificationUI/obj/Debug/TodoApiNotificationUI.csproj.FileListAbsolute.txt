@@ -1,0 +1,13 @@
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\bin\Debug\TodoApiNotificationUI.exe.config
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\bin\Debug\TodoApiNotificationUI.exe
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\bin\Debug\TodoApiNotificationUI.pdb
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.csproj.AssemblyReference.cache
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.Form1.resources
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.Properties.Resources.resources
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.csproj.GenerateResource.cache
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.csproj.CoreCompileInputs.cache
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiN.5B3D6257.Up2Date
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.exe
+C:\Users\Furkan\source\repos\TodoApi\TodoApiNotificationUI\obj\Debug\TodoApiNotificationUI.pdb

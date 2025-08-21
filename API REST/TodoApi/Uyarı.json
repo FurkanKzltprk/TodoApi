@@ -1,0 +1,3 @@
+//serviceAccount.json dosyasý gizli bilgiler içerdiði için bunu sildim, git huba 
+//pushlanamaz git hub push protection bunu engelliyor bundan dolayý projeyi clonelarsan firebase e
+//gidip kendi hesabýna göre sana verilen bu dosyayu bu uyarýnýn da olduðu dosya dizininin içerisine eklemen gerekiyor.!!
