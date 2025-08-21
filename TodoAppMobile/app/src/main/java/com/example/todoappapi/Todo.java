@@ -7,15 +7,19 @@ public class Todo {
     private int id;
     private String title;
 
-    @SerializedName("isCompleted")  //furkan:bu satır çok önemli !! api ile uyumlu olmalı !!
+    @SerializedName("isCompleted") // API'deki C# modeliyle uyumlu
     private boolean isCompleted;
+
+    @SerializedName("createdAt")   // API'den gelen timestamp için
+    private String createdAt;
 
     public Todo() {}
 
-    public Todo(int id, String title, boolean isCompleted) {
+    public Todo(int id, String title, boolean isCompleted, String createdAt) {
         this.id = id;
         this.title = title;
         this.isCompleted = isCompleted;
+        this.createdAt = createdAt;
     }
 
     // Getter ve Setter'lar
@@ -41,5 +45,13 @@ public class Todo {
 
     public void setCompleted(boolean completed) {
         isCompleted = completed;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 }

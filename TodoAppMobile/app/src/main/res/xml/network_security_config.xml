@@ -2,6 +2,16 @@
 <network-security-config>
     <domain-config cleartextTrafficPermitted="true">
         <!-- Sunucu IP adresin: HTTP olarak iletişime izin verilir -->
-        <domain includeSubdomains="true">192.168.1.104</domain>
+        <domain includeSubdomains="true">192.168.56.1</domain>
+        <domain includeSubdomains="true">192.168.86.204</domain>
+        <domain includeSubdomains="true">10.33.254.66</domain>
+        <domain includeSubdomains="true">192.168.1.109</domain>
+
+<!--        <domain includeSubdomains="true">192.168.56.1</domain>-->
+
+        <!-- bilgisayarı açıp kapatırsan ip değişir BASEURL ile birlikte burada da
+        Yapman gerekecek -->
+
+
     </domain-config>
 </network-security-config>

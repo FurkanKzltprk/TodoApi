@@ -19,7 +19,6 @@ public interface TodoApiServiceDAO {
     Call<List<Todo>> getTodos();
 
 
-
     @POST("api/todoitems/create")
     Call<Todo> createTodo(@Body Todo todo);
 
@@ -33,12 +32,17 @@ public interface TodoApiServiceDAO {
     @POST("api/todoitems/getbyid")
     Call<Todo> getTodoById(@Body int id);
 
+    //furkan:buraya yeni POST isteği geliyor , firebase'a göndermek için
+    @POST("api/tokens/register")
+    Call<Void> sendFirebaseToken(@Body TokenRequest tokenRequest);
+
+    @POST("/tokens/register")
+    Call<Void> sendToken(@Body TokenRequest request);
+
+
+
     // 5. ID'YE GÖRE TODO GETİR (Swagger'da vardı ama henüz eklememişsin, istersen bunu da ekleyebilirim)
 }
-
-
-
-
 
 
 //furkan: dikkat et hepsi POST isteği !!! //red:aman dikkat!!! GET,PUT,DELETE yok sadece POST (security)

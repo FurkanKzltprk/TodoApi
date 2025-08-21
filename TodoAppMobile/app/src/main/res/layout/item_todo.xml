@@ -1,37 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="56dp"
-    android:padding="12dp"
-    android:background="#FFFFFF">
+    android:layout_marginBottom="12dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:foreground="?attr/selectableItemBackground">
 
-    <!-- Görev Başlığı -->
-    <TextView
-        android:id="@+id/todo_title"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Görev Başlığı"
-        android:textSize="16sp"
-        android:textColor="#212121"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/todo_checkbox"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        android:maxLines="2"
-        android:ellipsize="end"/>
+        android:minHeight="56dp"
+        android:padding="16dp"
+        android:background="#FFFFFF">
 
-    <!-- Tamamlandı Checkbox -->
-    <CheckBox
-        android:id="@+id/todo_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:buttonTint="#4CAF50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Görev Başlığı -->
+        <TextView
+            android:id="@+id/todo_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Görev Başlığı"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/todo_checkbox"
+            app:layout_constraintHorizontal_bias="0" />
+
+        <!-- Oluşturulma Tarihi -->
+        <TextView
+            android:id="@+id/todo_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="2025-08-05"
+            android:textSize="13sp"
+            android:textColor="#888888"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/todo_title"
+            app:layout_constraintStart_toStartOf="@id/todo_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/todo_checkbox" />
+
+        <!-- Tamamlandı Checkbox -->
+        <CheckBox
+            android:id="@+id/todo_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#4CAF50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/delete_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sil"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#F44336"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/todo_date"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
