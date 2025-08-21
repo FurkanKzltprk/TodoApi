@@ -2,9 +2,11 @@ from docx import Document
 from docx.shared import Pt
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 
+
+
 # Markdown içeriği
 markdown_content = """
-📝 Todo List Uygulaması – Backend (ASP.NET Core Web API) + Android Client (Java)
+📝 Todo List Uygulamasi – Backend (ASP.NET Core Web API) + Android Client (Java)
 
 🇹🇷 Türkçe Açıklama
 Bu proje, yapılacaklar listesi (Todo List) yönetimi için geliştirilmiş bir ASP.NET Core Web API ve Android (Java) tabanlı istemci uygulamasıdır.  
