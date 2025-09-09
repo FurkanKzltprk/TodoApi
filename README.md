@@ -46,26 +46,7 @@ Android Client
 - SwipeRefreshLayout
 - Material Design
 
-📂 Proje Yapısı (Project Structure)
 
-ToDoProject/
-├── WebAPI/
-│   ├── Controllers/
-│   ├── Models/
-│   ├── Data/
-│   ├── Program.cs
-│   ├── Startup.cs
-│   └── ToDoAPI.csproj
-│
-├── AndroidApp/
-│   ├── app/
-│   │   ├── src/main/
-│   │   │   ├── java/com/example/todoappapi/
-│   │   │   ├── res/layout/
-│   │   │   └── AndroidManifest.xml
-│   └── build.gradle
-│
-└── README.md
 
 🚀 Başlangıç (How to Run)
 
