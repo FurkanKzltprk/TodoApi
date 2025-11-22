@@ -79,13 +79,3 @@ Mevcut Özellikler
 - Dark mode desteği
 - Notification sistemi
 
-📄 Lisans
-Bu proje MIT Lisansı ile lisanslanmıştır. Detaylar için LICENSE dosyasına göz atabilirsiniz.
-
-🤝 Katkı Sağlamak
-Katkıda bulunmak isterseniz pull request gönderebilir, issue açabilir veya projeyi fork ederek geliştirmeye katkı sağlayabilirsiniz.
-
-✉️ İletişim
-Proje geliştiricisi: Furkan
-E-posta: furkan@example.com
-LinkedIn: https://linkedin.com/in/furkan-developer
