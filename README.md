@@ -1,5 +1,5 @@
 
-Youtube link Tanıtım (introduction) : https://www.youtube.com/watch?v=BRg3JLsioJs
+Youtube link Tanıtım (introduction) : https://www.youtube.com/watch?v=lP5rW1Ylgtc
 
 
 README – Todo List Uygulaması
