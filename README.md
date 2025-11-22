@@ -1,3 +1,7 @@
+
+Youtube link Tanıtım (introduction) : https://www.youtube.com/watch?v=BRg3JLsioJs
+
+
 README – Todo List Uygulaması
 📝 Todo List Uygulamasi – Backend (ASP.NET Core Web API) + Android Client (Java)
 
